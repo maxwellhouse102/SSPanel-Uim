@@ -177,8 +177,12 @@ $_ENV['enable_checkin_captcha'] = 'false';	//启用签到验证码
 
 
 //支付系统设置----------------------------------------------------------------------------------------
-#取值 none | codepay | trimepay | f2fpay | chenAlipay | paymentwall | spay |tomatopay | payjs
+#取值 none | codepay | trimepay | f2fpay | chenAlipay | paymentwall | spay |tomatopay | payjs | yftpay
 $_ENV['payment_system']='none';
+
+#yft支付设置
+$_ENV['yft_secret']='';
+$_ENV['yft_accesskey']='';
 
 #codepay码支付
 #wiki地址:https://goo.gl/dRwRDi  http://t.cn/RnsWjtB
@@ -219,6 +223,21 @@ $_ENV['bitpay_secret']='';
 #PayJs
 $_ENV['payjs_mchid']='';
 $_ENV['payjs_key']='';
+
+#tomatopay番茄云支付
+#使用教程:https://swapidc.fanqieui.com/?t/329.html  tg群 https://t.me/fanqiepay
+$_ENV['tomatopay'] = [
+        'wxpay'=>[
+            'mchid' => '',   // 商户号
+            'account' => '', //您在番茄云支付的登录邮箱
+            'token' => "" // 安全验证码
+        ],
+        'alipay'=>[
+            'mchid' => '',   // 商户号
+            'account' => '', //您在番茄云支付的登录邮箱
+            'token' => "" // 安全验证码
+        ],
+ ];
 
 
 //其他面板显示设置------------------------------------------------------------------------------------------
@@ -280,6 +299,7 @@ $_ENV['db_charset'] = 'utf8';
 $_ENV['db_collation'] = 'utf8_general_ci';
 $_ENV['db_prefix'] = '';
 $_ENV['muKeyList'] = ['　'];                //多 key 列表
+$_ENV['subscribe_client'] = 'false';        //下载协议客户端时附带节点和订阅信息
 
 #aws
 $_ENV['aws_access_key_id'] = '';
